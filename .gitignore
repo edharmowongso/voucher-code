@@ -1,0 +1,5 @@
+/.bundle/
+/Gemfile.lock
+/spec/reports/
+/tmp/
+.rspec_status

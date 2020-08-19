@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['edharmowongso@gmail.com']
 
   spec.summary       = %q{A simple gem to generate unique, random, and hard to guess coupon/voucher codes}
-  spec.description   = %q{This project was inspired from https://github.com/rspective/voucher-code-generator-js}
-  spec.homepage      = 'https://github.com/edharmowongso/voucher-code-generator-ruby'
+  spec.description   = %q{A simple gem to generate unique, random, and hard to guess coupon/voucher codes. This project was inspired from https://github.com/rspective/voucher-code-generator-js}
+  spec.homepage      = 'https://github.com/edharmowongso/voucher-code'
   spec.license       = 'MIT'
 
   spec.require_paths = %w(lib)

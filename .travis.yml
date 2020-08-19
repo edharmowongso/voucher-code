@@ -3,7 +3,7 @@ language: ruby
 rvm:
   - 2.5.1
 script:
-  - echo 'Starting'
+  - echo 'Preparation...'
   - gem install bundler -v 2.1.4
-  - echo 'Testing!'
+  - echo 'Testing rspec'
   - rspec spec/voucher_code/config.rb

@@ -19,7 +19,12 @@ module VoucherCode
       @charset = config[:charset] || select_charset('alphanumeric')
       @prefix = config[:prefix] || ''
       @postfix = config[:postfix] || ''
-      @pattern = config[:pattern] || looping('#', @length)
+
+      @pattern = if config[:pattern].nil? || config[:pattern].empty?
+                  looping('#', @length)
+                else
+                  config[:pattern]
+                end
     end
 
     def generate
@@ -38,23 +43,13 @@ module VoucherCode
       codes.keys
     end
 
-    def generate_single_data
-      code = @pattern.split('').map { |char|
-        char == '#' ?
-          Helpers::Randomize.random_element(@charset) :
-          char
-      }.join('')
-
-      "#{@prefix}#{code}#{@postfix}"
-    end
-
     private
 
     def looping(str, length)
       result = ''
 
       i = 0
-      until i > length
+      until i > length - 1
         result += str
         i += 1
       end
@@ -68,6 +63,16 @@ module VoucherCode
       raise 'Invalid charset' unless selected_charset
 
       selected_charset
+    end
+
+    def generate_single_data
+      code = @pattern.split('').map { |char|
+        char == '#' ?
+          Helpers::Randomize.random_element(@charset) :
+          char
+      }.join('')
+
+      "#{@prefix}#{code}#{@postfix}"
     end
 
     def feasible?

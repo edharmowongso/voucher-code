@@ -1,6 +1,9 @@
 ---
-sudo: false
 language: ruby
 rvm:
   - 2.5.1
-before_install: gem install bundler -v 2.1.4
+script:
+  - echo 'Starting'
+  - gem install bundler -v 2.1.4
+  - echo 'Testing!'
+  - rspec spec/voucher_code/config.rb

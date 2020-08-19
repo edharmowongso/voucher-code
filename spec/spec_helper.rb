@@ -1,5 +1,6 @@
 # include lib folder path
-$LOAD_PATH.unshift File.expand_path('.', '../lib/')
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'bundler/setup'
 Bundler.setup

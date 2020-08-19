@@ -31,42 +31,56 @@ VoucherCode.generate
 If you would like to use custom configuration, there are several attributes you have to understand first.
 
 **Count**
-It used for returning {:count} generated voucher codes
-By default, it sets to 1
+
+- It used for returning {:count} generated voucher codes
+- By default, it sets to 1
 
 **Length**
-It used for returning generated voucher codes based on length configuration
-By default, it sets to 8
+
+- It used for returning generated voucher codes based on length configuration
+- By default, it sets to 8
 
 **Charset**
-It used for generating voucher code
-Use this three options:
+
+- It used for generating voucher code. Use this three options:
+
+```ruby
 config.charset = '0123456789'
 config.charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 config.charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-You can also use your own custom charset
-By default, if sets to '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+```
+
+- You can also use your own custom charset. By default, if sets to '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 **Prefix**
-It used for append prefix before generated voucher code
-For example:
+
+- It used for append prefix before generated voucher code. For example:
+
+```ruby
 config.prefix = '2020-'
-It generates 2020-${voucher_code}
-By default, it sets to empty string/''
+```
+
+- It will generates 2020-${voucher_code}. By default, it sets to empty string / ''.
 
 **Postfix**
-It used for append postfix after generated voucher code
-For example:
+
+- It used for append postfix after generated voucher code. For example:
+
+```ruby
 config.postfix = '-2020'
-It generates ${voucher_code}-2020
-By default, it sets to empty string/''
+```
+
+- It will generates ${voucher_code}-2020. By default, it sets to empty string / ''.
 
 **Pattern**
-It used for generate voucher code based on your customize pattern
-For example:
+
+- It used for generate voucher code based on your customize pattern. For example:
+
+```ruby
 config.pattern = '####-####'
-It generates 'ABHs-12Lo'
-By default, it sets to '########' where it depends on config.length
+```
+
+- It will generates 'ABHs-12Lo'. By default, it sets to '########' where it depends on config.length
 
 ```ruby
 configuration = {
